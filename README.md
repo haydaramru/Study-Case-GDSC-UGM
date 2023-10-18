@@ -79,3 +79,5 @@ POST http://localhost:7070/v1/posts
     "via": "UGM_FESS"
 }
 ```
+
+![Alt text](image.png)

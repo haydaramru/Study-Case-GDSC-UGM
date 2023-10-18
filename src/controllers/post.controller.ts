@@ -2,8 +2,13 @@
 import { postServices } from '../services/post.service'
 import { Request, Response } from 'express'
 import { PostschemaValidate } from '../models/posts'
+import { Get, Route } from 'tsoa'
 
+@Route("post")
 class postController {
+    
+    @Get("/")
+
     //add post controller
     addpost = async (req: Request, res: Response) => {
         //data to be saved in database
@@ -34,7 +39,6 @@ class postController {
         res.send(posts)
     }
 
-
     //get a single post
     getSinglePost = async (req: Request, res: Response) => {
         //get id from the parameter
@@ -50,14 +54,12 @@ class postController {
         res.send(post)
     }
 
-
     //delete a post
     deletePost = async (req: Request, res: Response) => {
         const id = req.params.id
         await postServices.deletePost(id)
         res.send('post deleted')
     }
-
 }
 
 //export class

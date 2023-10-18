@@ -5,6 +5,13 @@ import { PostController } from '../controllers/post.controller'
 //initiating the router
 export const router = express.Router()
 
+/**
+ * @swagger
+ * tags:
+ *   name: Post
+ *   description: CRUD operation for posts (tweets) feature from X (formerly Twitter)
+ */
+
 //add post route
 router.post('/',PostController.addpost)
 
